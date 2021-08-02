@@ -90,11 +90,11 @@ jobs:
       run: |
         git clone https://github.com/kuoruan/openwrt-v2ray.git package/v2ray-core
 
-     # luci-app-v2ray
-     - name: Import luci-app-v2ray
-       working-directory: ./openwrt
-       run: |
-         git clone -b luci2 https://github.com/kuoruan/luci-app-v2ray.git package/luci-app-v2ray
+    # luci-app-v2ray
+    - name: Import luci-app-v2ray
+      working-directory: ./openwrt
+      run: |
+        git clone -b luci2 https://github.com/kuoruan/luci-app-v2ray.git package/luci-app-v2ray
 
 
     - name: Configuration Customization - Build_x86_64
