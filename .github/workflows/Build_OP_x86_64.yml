@@ -87,12 +87,6 @@ jobs:
     #  run: |
     #    git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon-jerrykuku
 
-    # openwrt-v2ray
-    - name: Import openwrt-v2ray
-      working-directory: ./openwrt
-      run: |
-        git clone https://github.com/kuoruan/openwrt-v2ray.git package/v2ray-core
-
     - name: Configuration Customization - Build_x86_64
       env:
         CONFIG_FILE: 'x86_64.config'
