@@ -60,11 +60,6 @@ jobs:
     #    git clone https://github.com/xiaorouji/openwrt-passwall.git package/lienol
     #    git clone "your_github_link" package/"your_folder_name"      
 
-    #- name: Import external feeds - JerryKuKu Argon
-    #  working-directory: ./openwrt
-    #  run: |
-    #    git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon-jerrykuku
-
     - name: Configuration Customization - Build_x86_64
       env:
         CONFIG_FILE: 'x86_64.config'
@@ -77,14 +72,14 @@ jobs:
       working-directory: ./openwrt
       run: |
         make download -j$(nproc)
-        find dl -size -1024c -exec ls -l {} \;
-        find dl -size -1024c -exec rm -f {} \;
+        #find dl -size -1024c -exec ls -l {} \;
+        #find dl -size -1024c -exec rm -f {} \;
 
     - name: Build firmware
       working-directory: ./openwrt
       run: |
         echo -e "$(nproc) thread build."
-        make -j$(nproc) V=s
+        make -j1 V=s
 
     - name : Upload artifact
       uses: actions/upload-artifact@master
