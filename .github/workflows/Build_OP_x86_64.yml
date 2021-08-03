@@ -67,7 +67,7 @@ jobs:
         git clone $REPO_URL openwrt
         cd openwrt
         git checkout cbba577f6dcbffcd5a2933baad48459ec3f5681b
-        echo "src-git ssrp https://github.com/fw876/helloworld.git" >> ./feeds.conf.default
+        #echo "src-git ssrp https://github.com/fw876/helloworld.git" >> ./feeds.conf.default
         
     - name: Update & Install feeds
       working-directory: ./openwrt
